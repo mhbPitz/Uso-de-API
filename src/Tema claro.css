@@ -1,15 +1,22 @@
-body {
-    background: #eeeeee
+/* Altera o fundo do body quando o tema claro estiver ativo */
+body:has(#center.theme-light) {
+    background: #eeeeee;
 }
-h1, h2, h3, h4, h5, h6 {
-    color: #db643e
+
+/* Altera os textos APENAS dentro do tema claro */
+.theme-light h1, .theme-light h2, .theme-light h3, 
+.theme-light h4, .theme-light h5, .theme-light h6 {
+    color: #db643e;
 }
-.card {
-    color: #3daeb7
+
+.theme-light .card {
+    color: #3daeb7;
 }
-.movie-list {
-    color: #3daeb7
+
+.theme-light .movie-list {
+    color: #3daeb7;
 }
-#next-steps {
-    color: #3daeb7
+
+.theme-light #next-steps {
+    color: #3daeb7;
 }

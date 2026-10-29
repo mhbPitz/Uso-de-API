@@ -1,15 +1,22 @@
-body {
-    background: #292528
+/* Altera o fundo do body quando o tema escuro estiver ativo */
+body:has(#center.theme-dark) {
+    background: #121212; /* Exemplo de fundo escuro */
 }
-h1, h2, h3, h4, h5, h6 {
-    color: #ffd300
+
+/* Altera os textos APENAS dentro do tema escuro */
+.theme-dark h1, .theme-dark h2, .theme-dark h3, 
+.theme-dark h4, .theme-dark h5, .theme-dark h6 {
+    color: #ff8e6e; /* Cor contrastante para o modo escuro */
 }
-.card {
-    color: #dcdfd6
+
+.theme-dark .card {
+    color: #a2f1f8; 
 }
-.movie-list {
-    color: #dcdfd6
+
+.theme-dark .movie-list {
+    color: #a2f1f8;
 }
-#next-steps {
-    color: #dcdfd6
+
+.theme-dark #next-steps {
+    color: #a2f1f8;
 }

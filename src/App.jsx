@@ -30,8 +30,6 @@ function App() {
 
   return (
     <section id="center" className={theme}>
-      <ThemeButton dark={dark} onToggle={() => setDark(!dark)} />
-
       <div className="div-filha-do-center">
         <ThemeButton dark={dark} onToggle={() => setDark(!dark)} />
       </div>
