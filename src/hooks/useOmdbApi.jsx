@@ -12,7 +12,7 @@ export default function useOmdbApi() {
     const getData = async () => {
       try {
         const response = await axios.get(
-          `https://www.omdbapi.com/?t=elite+squad&apikey=${API_KEY}`,
+          `https://www.omdbapi.com/?t=borderlands&apikey=${API_KEY}`,
         );
         setFilme(response.data);
       } catch (requestError) {

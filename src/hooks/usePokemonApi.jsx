@@ -9,7 +9,7 @@ export default function usePokemonApi() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get('https://pokeapi.co/api/v2/pokemon/charizard');
+        const response = await axios.get('https://pokeapi.co/api/v2/pokemon/scrafty');
         setPokemon(response.data);
       } catch (requestError) {
         setError(requestError);
