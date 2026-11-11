@@ -69,7 +69,6 @@ function App() {
           )}
         </div>
 
-          <button>pokemon aleatorio</button>
         <PokemonApi pokemon={pokemon} />
       </section>
 
