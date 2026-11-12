@@ -3,9 +3,11 @@ import axios from 'axios';
 
 export default function usePokemonApi() {
   const [pokemon, setPokemon] = useState(null);
+  const [pokemonSpecies, setPokemonSpecies] = useState(null);
+  const [evolutionChain, setEvolutionChain] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [pokemonId, setPokemonId] = useState(560);
+  const [pokemonId, setPokemonId] = useState(25);
 
   useEffect(() => {
     const getData = async () => {
@@ -13,6 +15,11 @@ export default function usePokemonApi() {
       try {
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
         setPokemon(response.data);
+        setPokemonSpecies(response.data.species.name);
+        const response2 = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${pokemonSpecies}`);
+        setEvolutionChain(response2.data.evolution_chain.url);
+        const response3 = await axios.get(`${evolutionChain}`);
+        setEvolutionChain(response3.data);
       } catch (requestError) {
         setError(requestError);
         console.error('Erro ao buscar Pokémon:', requestError);
@@ -30,5 +37,5 @@ export default function usePokemonApi() {
   
   }
 
-  return { pokemon, loading, error, roletarPokemon };
+  return { pokemon, setPokemon, pokemonSpecies, evolutionChain, loading, error, roletarPokemon };
 }
