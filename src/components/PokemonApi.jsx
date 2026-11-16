@@ -6,8 +6,9 @@ const {pokemon, setPokemon, pokemonSpecies, evolutionChain, loading, error, role
   }
 
   function evoluiPara() {
-    if(evolutionChain?.chain?.evolves_to?.[0]?.species?.name) {
-        setPokemon(evolutionChain?.chain?.evolves_to?.[0]?.species?.name)
+    const proximoPokemon = evolutionChain?.chain?.evolves_to?.[0]?.species?.name;
+    if (proximoPokemon) {
+      setPokemon(proximoPokemon);
     }
       }
   return (

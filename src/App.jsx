@@ -11,6 +11,15 @@ import useDbzApi from './hooks/useDbzApi.jsx';
 import useMockApi from './hooks/useMockApi.jsx';
 import useOmdbApi from './hooks/useOmdbApi.jsx';
 import usePokemonApi from './hooks/usePokemonApi.jsx';
+import {Route, Routes, BrowserRouter} from 'react-router-dom';
+
+<BrowserRouter>
+<Routes>
+  <Route path='/dragonBall' element={<dragonBallPage.jsx />} />
+  <Route path='/pokemon' element={<pokemonPage.jsx />} />
+  <Route path='/filmes' element={<filmesPage.jsx />} />
+</Routes>
+</BrowserRouter>
 
 function App() {
   const [dark, setDark] = useState(false);
