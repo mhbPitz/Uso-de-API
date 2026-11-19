@@ -13,6 +13,9 @@ import useOmdbApi from './hooks/useOmdbApi.jsx';
 import usePokemonApi from './hooks/usePokemonApi.jsx';
 import {Route, Routes, BrowserRouter, Link} from 'react-router-dom';
 import DragonBallPage from './pages/dragonBallPage.jsx';
+import MoviesPage from './pages/filmesPage.jsx';
+import PokemonPage from './pages/pokemonPage.jsx';
+import MainPage from './pages/MainPage.jsx'
 
 
 
@@ -35,12 +38,13 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <Link to="/"><button>Dragon Ball</button></Link>
     <section id="center" className={theme}>
 <Routes>
-  <Route path='/' element={<DragonBallPage />} />
-  {/* <Route path='/pokemon' element={<pokemonPage.jsx />} />
-  <Route path='/filmes' element={<filmesPage.jsx />} /> */}
+  <Route path='/' element={<MainPage />} />
+  <Route path='/dbz' element={<DragonBallPage />} />
+  <Route path='/movies' element={<MoviesPage />} />
+  <Route path='/pokemon' element ={<PokemonPage />} />
+  
 </Routes>
       
 {/*    {(perfilError || dbzError || pokemonError || filmeError) && (

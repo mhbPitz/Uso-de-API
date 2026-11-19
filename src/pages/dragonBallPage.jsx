@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DragonBallApi from "../components/DragonBallApi.jsx";
 import useDbzApi from "../hooks/useDbzApi.jsx";
 import ThemeButton from "../hooks/ButtonTheme.jsx";
+import MainPageRender from '../components/MainPageRender.jsx'
 
 export default function DragonBallPage() {
   const [dark, setDark] = useState(false);
@@ -15,6 +16,7 @@ return (<>
       </div>
 </section>
 <DragonBallApi />
+<MainPageRender />
 </>
 
 )

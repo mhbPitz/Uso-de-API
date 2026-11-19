@@ -1,6 +1,7 @@
 import useDbzApi from "../hooks/useDbzApi";
 
-export default function DragonBallApi({ dbz }) {
+export default function DragonBallApi() {
+const {dbz, loading, error } = useDbzApi();
 
   if (!dbz || !dbz.image) {
     return <p>Carregando personagem do Dragon Ball...</p>;
