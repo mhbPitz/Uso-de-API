@@ -20,7 +20,7 @@ import MainPage from './pages/MainPage.jsx'
 
 
 function App() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(() => localStorage.getItem('tema') || false);
   const [text, setText] = useState(() => localStorage.getItem('easy-input') || '');
 
   const { perfil, error: perfilError } = useMockApi();
@@ -28,12 +28,13 @@ function App() {
   const { pokemon, error: pokemonError } = usePokemonApi();
   const { filme, error: filmeError } = useOmdbApi();
 
-  const theme = dark ? 'theme-dark' : 'theme-light';
+  const theme = localStorage.getItem('dark') || dark ? 'theme-dark' : 'theme-light';
 
   useEffect(() => {
+    localStorage.setItem('dark', dark);
     localStorage.setItem('easy-input', text);
     console.log('Fácil: Salvando no localStorage ->', text);
-  }, [text]);
+  }, [text, dark]);
 
   return (
     <>
